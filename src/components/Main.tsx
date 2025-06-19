@@ -39,7 +39,7 @@ function Main() {
     <main>
       <div className="container">
         <h1>SMS Directory</h1>
-        <img src={HeaderInfo} alt="headerinfo" className="info-image" />
+        <img src={HeaderInfo} loading="lazy" alt="headerinfo" className="info-image" />
         <form onSubmit={handleSearch}>
           <input
             type="text"
