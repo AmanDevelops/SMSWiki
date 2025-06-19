@@ -13,11 +13,10 @@
 }
 
 
-
-.App{
+.App {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
 
 nav {
@@ -29,8 +28,25 @@ nav {
   color: var(--grey-50);
 }
 
+.title {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+nav img {
+  height: 2rem;
+}
+
 .nav-title {
   font-size: 2rem;
+}
+
+svg {
+  margin: auto;
+  background: #fff;
+  display: block;
+  background-color: var(--grey-50);
 }
 
 .nav-links {
@@ -60,7 +76,7 @@ main {
   background-color: var(--grey-50);
   display: flex;
   flex-direction: column;
-  height: 60vh;
+  height: 80vh;
   width: 60vw;
   padding: 2rem;
   align-items: center;
@@ -71,6 +87,10 @@ h1 {
   margin: 0;
 }
 
+.info-image{
+  height: 25vh;
+}
+
 form {
   margin-top: 1rem;
   display: flex;
@@ -79,48 +99,58 @@ form {
   gap: 2rem;
 }
 
-input[type="text"]{
-    padding: 0.5rem;
-    font-size: 1.5rem;
-    border-radius: 10px;
-    background-color: white;
-    border: solid white 4px;
-    outline: none;
-    transition: ease-in-out 0.2s;
+input[type="text"] {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  background-color: white;
+  border: solid white 4px;
+  outline: none;
+  transition: ease-in-out 0.2s;
 }
-input[type="text"]:focus{
-    box-shadow: 0px 0px 1px 4px rgba(13, 110, 253, 0.5);
-}
-
-input[type="submit"]{
-    font-family: "Ubuntu";
-    font-size: 2rem;
-    width: 10rem;
-    height: 3rem;
-    background-color: #0D6EFD;
-    color: white;
-    border-radius: 1rem;
-    margin-top: 1rem;
-    transition: 0.15s ease-in;
-    cursor: pointer;
-    border: solid rgb(0, 0, 0,.05) 4px;
-}
-input[type="submit"]:hover{
-    background-color: #0b5ed7;
-    box-shadow: 0px 0px 0.5px  2px #0d6efd;
-    scale: 1.03;
+input[type="text"]:focus {
+  box-shadow: 0px 0px 1px 4px rgba(13, 110, 253, 0.5);
 }
 
+input[type="submit"] {
+  font-family: "Ubuntu";
+  font-size: 2rem;
+  width: 10rem;
+  height: 3rem;
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  transition: 0.15s ease-in;
+  cursor: pointer;
+  border: solid rgb(0, 0, 0, 0.05) 4px;
+}
+input[type="submit"]:hover {
+  background-color: #0b5ed7;
+  box-shadow: 0px 0px 0.5px 2px #0d6efd;
+  scale: 1.03;
+}
+
+.error-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.not-found-image{
+  height: 150px;
+  width: 200px;
+}
 
 @media screen and (max-width: 768px) {
-  main{
+  main {
     padding: 0;
   }
-  .container{
+  .container {
     height: 80vh;
     width: 98vw;
   }
-  input[type="text"]{
+  input[type="text"] {
     width: 95%;
   }
 }
