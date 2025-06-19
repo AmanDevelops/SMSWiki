@@ -1,3 +1,5 @@
+/* Global Variables */
+
 :root {
   --grey-50: #f6f6f6;
   --grey-200: #d1d1d1;
@@ -10,6 +12,13 @@
   --grey-800: #454545;
   --grey-900: #3d3d3d;
   --grey-950: #262626;
+  --color-secondary-100: #0d6efd;
+  --color-secondary-200: #0b5ed7;
+  --color-secondary-50: #0d6efd80;
+  --button-border: #0000000d;
+  --font: -apple-system, BlinkMacSystemFont, "Nunito", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 .App {
@@ -18,22 +27,24 @@
   min-height: 100vh;
 }
 
+/* Navigation Bar */
+
 nav {
-  margin: 0;
-  padding: 0.5rem;
   display: flex;
   justify-content: space-between;
+  padding: 0.5rem;
   background-color: var(--grey-950);
   color: var(--grey-50);
+  margin: 0;
 }
 
 .title {
   display: flex;
-  gap: 1rem;
   align-items: center;
+  gap: 1rem;
 }
 
-nav img {
+.title img {
   height: 2rem;
 }
 
@@ -48,14 +59,16 @@ nav img {
 
 .nav-links a:any-link {
   font-size: 2rem;
-  text-decoration: none;
   color: var(--grey-50);
-  transition: 200ms;
+  text-decoration: none;
+  transition: transform 200ms;
 }
 
 .nav-links a:any-link:hover {
-  scale: 1.1;
+  transform: scale(1.1);
 }
+
+/* Main Component */
 
 main {
   flex: 1;
@@ -66,15 +79,14 @@ main {
 }
 
 .container {
-  box-sizing: border-box;
-  background-color: var(--grey-50);
   display: flex;
   flex-flow: column nowrap;
-  flex-direction: column;
-  height: 80vh;
-  width: 60vw;
-  padding: 2rem;
   align-items: center;
+  box-sizing: border-box;
+  min-width: 60vw;
+  min-height: 80vh;
+  padding: 2rem;
+  background-color: var(--grey-50);
   border-radius: 2rem;
 }
 
@@ -88,54 +100,64 @@ h1 {
 }
 
 form {
-  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  margin-top: 1rem;
 }
 
 input[type="text"] {
-  padding: 0.5rem;
+  font-family: var(--font);
   font-size: 1.5rem;
+  padding: 0.5rem;
   border-radius: 10px;
-  background-color: white;
-  border: solid white 4px;
+  border: solid var(--grey-50) 4px;
   outline: none;
-  transition: ease-in-out 0.2s;
+  transition: box-shadow 0.2s ease-in-out;
 }
 input[type="text"]:focus {
-  box-shadow: 0px 0px 1px 4px rgba(13, 110, 253, 0.5);
+  box-shadow: 0px 0px 1px 4px var(--color-secondary-50);
 }
 
 input[type="submit"] {
-  font-family: "Ubuntu";
+  font-family: var(--font);
   font-size: 2rem;
   width: 10rem;
   height: 3rem;
-  background-color: #0d6efd;
-  color: white;
-  border-radius: 1rem;
   margin-top: 1rem;
-  transition: 0.15s ease-in;
   cursor: pointer;
-  border: solid rgb(0, 0, 0, 0.05) 4px;
+  border-radius: 1rem;
+  color: var(--grey-50);
+  background-color: var(--color-secondary-100);
+  border: solid var(--button-border) 4px;
+  transition: all 0.15s ease-in;
 }
 input[type="submit"]:hover {
-  background-color: #0b5ed7;
-  box-shadow: 0px 0px 0.5px 2px #0d6efd;
+  background-color: var(--color-secondary-200);
+  box-shadow: 0px 0px 0.5px 2px var(--color-secondary-100);
   scale: 1.03;
+}
+
+.loader {
+  width: 200px;
+  height: 200px;
+}
+
+.success-message {
+  text-align: center;
+  color: #008000;
 }
 
 .error-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #ff0000;
 }
 
 .not-found-image {
-  height: 150px;
   width: 200px;
+  height: 150px;
 }
 
 @media screen and (max-width: 768px) {
@@ -145,17 +167,14 @@ input[type="submit"]:hover {
 
   .nav-links a:any-link {
     font-size: 1.25rem;
-    text-decoration: none;
-    color: var(--grey-50);
-    transition: 200ms;
   }
 
   main {
     padding: 0;
   }
   .container {
-    height: 80vh;
     width: 98vw;
+    height: 80vh;
   }
 
   .info-image {

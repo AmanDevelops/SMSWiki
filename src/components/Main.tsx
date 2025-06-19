@@ -50,7 +50,7 @@ function Main() {
           <input type="submit" disabled={status === "searching"} />
         </form>
         {status === "searching" && (
-          <div>
+          <div className="loader">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -180,7 +180,7 @@ function Main() {
         )}
         {status === "success" && (
           <>
-            <h2 style={{ textAlign: "center", color: "green" }}>
+            <h2 className="success-message">
               The Registered Principal Entity is <br />
               <a
                 href={`https://www.google.com/search?q=${name}`}
@@ -195,14 +195,14 @@ function Main() {
         )}
         {status === "error" && (
           <div className="error-container">
-            <h2 style={{ textAlign: "center", color: "red" }}>
+            <h2>
               Entity Not Registered or Data Not Updated
             </h2>
             <img src={NotFound} alt="Not Found" className="not-found-image" />
           </div>
         )}
         {status === "noInput" && (
-          <h2 style={{ textAlign: "center", color: "red" }}>
+          <h2 className="error-container">
             Please Provide an Input
           </h2>
         )}
