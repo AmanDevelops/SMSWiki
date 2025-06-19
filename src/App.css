@@ -12,7 +12,6 @@
   --grey-950: #262626;
 }
 
-
 .App {
   display: flex;
   flex-direction: column;
@@ -42,23 +41,18 @@ nav img {
   font-size: 2rem;
 }
 
-svg {
-  margin: auto;
-  background: #fff;
-  display: block;
-  background-color: var(--grey-50);
-}
-
 .nav-links {
   display: flex;
   gap: 1rem;
 }
+
 .nav-links a:any-link {
   font-size: 2rem;
   text-decoration: none;
   color: var(--grey-50);
   transition: 200ms;
 }
+
 .nav-links a:any-link:hover {
   scale: 1.1;
 }
@@ -75,6 +69,7 @@ main {
   box-sizing: border-box;
   background-color: var(--grey-50);
   display: flex;
+  flex-flow: column nowrap;
   flex-direction: column;
   height: 80vh;
   width: 60vw;
@@ -87,7 +82,8 @@ h1 {
   margin: 0;
 }
 
-.info-image{
+.info-image {
+  width: 50vw;
   height: 25vh;
 }
 
@@ -131,18 +127,29 @@ input[type="submit"]:hover {
   scale: 1.03;
 }
 
-.error-container{
+.error-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.not-found-image{
+.not-found-image {
   height: 150px;
   width: 200px;
 }
 
 @media screen and (max-width: 768px) {
+  .nav-title {
+    font-size: 1.5rem;
+  }
+
+  .nav-links a:any-link {
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: var(--grey-50);
+    transition: 200ms;
+  }
+
   main {
     padding: 0;
   }
@@ -150,6 +157,12 @@ input[type="submit"]:hover {
     height: 80vh;
     width: 98vw;
   }
+
+  .info-image {
+    width: 90vw;
+    height: 25vh;
+  }
+
   input[type="text"] {
     width: 95%;
   }
